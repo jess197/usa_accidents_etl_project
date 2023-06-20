@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 with accidents_usa_raw as (
   select *
   from ACCIDENTS.USA.RAW
