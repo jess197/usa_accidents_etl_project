@@ -10,6 +10,14 @@ select substring(ca.id,3,10) as accident_id
      , time(ca.start_time) as accident_start_time
      , date(ca.end_time) as accident_end_date 
      , time(ca.end_time) as accident_end_time
+     , CASE WHEN DATE_PART('dow', accident_start_date) = 0 THEN 'Sunday'
+            WHEN DATE_PART('dow', accident_start_date) = 1 THEN 'Monday' 
+            WHEN DATE_PART('dow', accident_start_date) = 2 THEN 'Tuesday'
+            WHEN DATE_PART('dow', accident_start_date) = 3 THEN 'Wednesday'
+            WHEN DATE_PART('dow', accident_start_date) = 4 THEN 'Thursday'
+            WHEN DATE_PART('dow', accident_start_date) = 5 THEN 'Friday'
+            WHEN DATE_PART('dow', accident_start_date) = 6 THEN 'Saturday'
+        END AS accident_weekday
      , year(ca.start_time) as accident_year
      , ca.start_lat as latitude
      , ca.start_lng as longitude
