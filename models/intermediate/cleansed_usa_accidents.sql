@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='intermediate') }}
 with cleansed_usa_accidents as 
 (
     select * from {{ ref('accidents_usa_raw') }}

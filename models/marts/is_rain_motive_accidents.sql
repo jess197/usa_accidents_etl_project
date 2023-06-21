@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with is_rain_motive_accidents as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}

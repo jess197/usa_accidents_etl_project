@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with quantity_accidents_per_year as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}

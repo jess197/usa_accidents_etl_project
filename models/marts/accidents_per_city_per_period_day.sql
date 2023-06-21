@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with accidents_per_city_per_period_day as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}

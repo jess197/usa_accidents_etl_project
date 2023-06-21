@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with avg_severity_accidents_per_weather_condition as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}

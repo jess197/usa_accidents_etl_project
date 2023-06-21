@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with period_day_affects_accidents as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}

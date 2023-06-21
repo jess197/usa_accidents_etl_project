@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='staging') }}
 with accidents_usa_raw as (
   select *
   from ACCIDENTS.USA.RAW

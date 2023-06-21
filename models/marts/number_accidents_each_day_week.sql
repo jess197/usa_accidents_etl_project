@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', schema='marts') }}
 with number_accidents_each_day_week as 
 (
     select * from {{ ref('cleansed_usa_accidents') }}
