@@ -14,4 +14,4 @@ FROM
 GROUP BY
   weather_condition
 ORDER BY
-  average_severity desc;
+  average_severity desc
