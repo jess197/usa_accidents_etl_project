@@ -16,14 +16,17 @@ This is a countrywide traffic accident dataset, which covers 49 states of the Un
 ##### 3.1 AIRFLOW PIPELINE 
 <p> First of all I created a python script to upload the 3GB csv file to my Amazon S3 bucket </p>
 <b> Created the function: </b>
-``` upload_csv_file_to_s3()``` 
+
+``` upload_csv_file_to_s3() ``` 
+
 - <p>To send the csv file to S3 using boto3 AWS SDK for python, I'm not completely sure of it is the right or the best approach, I configured the credentials in the dockerfile and used os package to protect the cloud credentials mantaining on virtual environment and then putting the object</p>
 - <p>Created my S3 bucket and the necessary roles and policies in IAM.</p>
 - <p>Then I runned Airflow in Docker using docker-compose file, procedure just as the airflow tutorial recommends for learning and exploration environments.</p>
 <b>Created my dag: </b>
-```dag_load_file_to_s3``` 
-   - To orquestrate this simple process of ingestion. 
-  </p>
+
+``` dag_load_file_to_s3 ``` 
+
+<p> - To orquestrate this simple process of ingestion. </p>
 
  ##### 3.2 SNOWFLAKE
  <p> Created a free account in Snowflake to exploration, my option was the Enterprise because it have more resources. </p> 
