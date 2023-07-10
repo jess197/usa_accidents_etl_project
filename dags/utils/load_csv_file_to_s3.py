@@ -12,8 +12,8 @@ def upload_csv_file_to_s3(file_path):
                 Key='us_accidents_16_to_m23.csv',
                 Body=file
             )
-            print("Arquivo enviado para o Amazon S3 com sucesso!")
+            print(f"Uploaded file to Amazon S3 with success")
         except Exception as e:
-            print("Ocorreu um erro durante o upload do arquivo para o Amazon S3:")
+            print("An error occurred during the upload of the file to Amazon S3:")
             print(str(e))
 
